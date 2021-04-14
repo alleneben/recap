@@ -19,7 +19,20 @@ function SignUp() {
 
   function submit(e){
     e.preventDefault();
-    console.log(values);
+  
+    fetch('http://localhost:5000/api/v1/signup', 
+    {
+      method: 'POST',
+      body: JSON.stringify(values),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(response => response.json())
+    .then(responseData => {
+      console.log(responseData);
+    })
+
   }
   return (
       <form>
