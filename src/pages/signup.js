@@ -31,7 +31,10 @@ function SignUp() {
     .then(response => response.json())
     .then(responseData => {
       console.log(responseData);
-    })
+
+
+      
+    },err=>console.log(err))
 
   }
   return (
